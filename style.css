@@ -52,8 +52,25 @@ font-family: 'Playfair Display', serif; */
 .sidebar > button {
   display: flex;
   align-self: center;
-  margin-top: 50px;
-  
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  margin: 50px 0;
+  background-color: var(--blue);
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sidebar > button:hover {
+  background-color: #77aee2;
+}
+
+.sidebar > button:active {
+  background-color:#479ae7;
 }
 
 .main-content {
