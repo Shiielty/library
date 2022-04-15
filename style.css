@@ -1,8 +1,62 @@
 /* https://tailwindcss.com/docs/customizing-colors */
 :root {
+  --pink: #F8DFDF;
+  --lpink: #FFF2F2;
+  --blue: #9AC3EA;
+  --red: #F8AEAE;
+  --green: #9CE48A;
+  box-sizing: border-box
+}
+
+/* Import noto sans, noto serif, playfair display fonts */
+/* font-family: 'Noto Sans', sans-serif;
+font-family: 'Noto Serif', serif;
+font-family: 'Playfair Display', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:wght@600&display=swap');
+
+.wrapper {
+  display: flex;
+}
+
+.sidebar {
+  width: 400px;
+  height: 100vh;
+  background-color: var(--pink);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.04rem;
+  text-align: center;
+  margin: 40px 30px 0 30px;
+  border-bottom: #000000 solid 5px;
+}
+
+.header > span {
+  color: var(--blue);
+}
+
+.sidebar > p {
+  margin: 20px 30px 10px 30px;
+  font-family: 'Noto Serif', serif;
+}
+
+.sidebar > p:last-of-type {
+  margin-top: 0px;
+}
+
+.sidebar > button {
+  display: flex;
+  align-self: center;
+  margin-top: 50px;
   
 }
-* {
-  text-align: center;
-  background-color: var(--gray);
+
+.main-content {
+  width: 100%;
 }
+
