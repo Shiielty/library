@@ -20,7 +20,7 @@ font-family: 'Playfair Display', serif; */
 
 .sidebar {
   width: 400px;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--pink);
   display: flex;
   flex-direction: column;
