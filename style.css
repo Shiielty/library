@@ -87,7 +87,7 @@ font-family: 'Playfair Display', serif; */
 
 .card {
   background-color: var(--blue);
-  height: 250px;
+  height: 300px;
   padding: 30px;
   display: grid;
 }
@@ -162,16 +162,15 @@ p.book-description {
 }
 
 .form {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   min-height: 100%;
   background-color: hsla(0, 0%, 0%, 0.4);
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* display: none; */
 }
 
 .form-container {
