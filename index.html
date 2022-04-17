@@ -1,113 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./normalize.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Library</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./normalize.css" />
-  <link rel="stylesheet" href="./style.css" />
-  <title>Library</title>
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="sidebar">
-      <div class="header"><span>LIB</span>RARY</div>
-      <p>"There is no friend as loyal as a book"</p>
-      <p>- Ernest Hemingway</p>
-      <button class="open-form">+ Add Books</button>
-      <div class="form">
-        <form action="#" class="form-container" method="post">
-          <div class="form-header">Add Books</div>
-          <label for="title">Title:</label>
-          <input type="text" name="title" id="title">
-          <label for="author"></label>
-          <input type="text" name="author" id="author">
-          <label for="description">Description:</label>
-          <textarea name="description" id="description" cols="30" rows="10"></textarea>
-          <label for="pages">Pages:</label>
-          <input type="number" name="pages" id="pages">
-          <label for="read-status">Reading status:</label>
-          <select name="read-status" id="read-status">
-            <option value="read">Finished read</option>
-            <option value="not-read">Not yet read</option>
-          </select>
-          <button type="submit">Add books</button>
-          <button type="button" class="close-form">Close form</button>
-        </form>
-      </div>
-    </div>
-    <div class="main-content">
-      <div class="main-wrapper">
-        <div class="card">
-          <div class="card-header">
-            <div class="book-title">Kino no Tabi Volume 1</div>
-            <p class="book-author">- Keiichi Sigsawa</p>
-          </div>
-          <p class="book-description">
-            "Kino, a girl with an anthropomorphic motorcycle named Hermes,
-            travels from country to country, staying only three days in each,
-            absorbing the great good and horrible ugliness of each part of the
-            world."
-          </p>
-          <div class="card-footer">
-            <p class="book-pages">208 pages</p>
-            <button class="green-button">READ</button>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <div class="book-title">Kino no Tabi Volume 1</div>
-            <p class="book-author">- Keiichi Sigsawa</p>
-          </div>
-          <p class="book-description">
-            "Kino, a girl with an anthropomorphic motorcycle named Hermes,
-            travels from country to country, staying only three days in each,
-            absorbing the great good and horrible ugliness of each part of the
-            world."
-          </p>
-          <div class="card-footer">
-            <p class="book-pages">208 pages</p>
-            <button class="green-button">READ</button>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <div class="book-title">Kino no Tabi Volume 1</div>
-            <p class="book-author">- Keiichi Sigsawa</p>
-          </div>
-          <p class="book-description">
-            "Kino, a girl with an anthropomorphic motorcycle named Hermes,
-            travels from country to country, staying only three days in each,
-            absorbing the great good and horrible ugliness of each part of the
-            world."
-          </p>
-          <div class="card-footer">
-            <p class="book-pages">208 pages</p>
-            <button class="red-button">READ</button>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <div class="book-title">Kino no Tabi Volume 1</div>
-            <p class="book-author">- Keiichi Sigsawa</p>
-          </div>
-          <p class="book-description">
-            "Kino, a girl with an anthropomorphic motorcycle named Hermes,
-            travels from country to country, staying only three days in each,
-            absorbing the great good and horrible ugliness of each part of the
-            world."
-          </p>
-          <div class="card-footer">
-            <p class="book-pages">208 pages</p>
-            <button class="red-button">READ</button>
-          </div>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="header"><span>LIB</span>RARY</div>
+        <p>"There is no friend as loyal as a book"</p>
+        <p>- Ernest Hemingway</p>
+        <button class="open-form">+ Add Books</button>
+        <div class="form">
+          <form action="#" class="form-container" method="post">
+            <div class="form-header">Add Books</div>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" />
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" />
+            <label for="description">Description:</label>
+            <textarea
+              name="description"
+              id="description"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <label for="pages">Pages:</label>
+            <input type="number" name="pages" id="pages" />
+            <label for="read-status">Reading status:</label>
+            <select name="read-status" id="read-status">
+              <option value="read">Finished read</option>
+              <option value="not-read">Not yet read</option>
+            </select>
+            <button type="submit">Add books</button>
+            <button type="button" class="close-form">Close form</button>
+          </form>
         </div>
       </div>
-      <!-- TODO: cards -->
+      <div class="main-content">
+        <div class="main-wrapper">
+          <div class="card">
+            <div class="card-header">
+              <div class="book-title">Kino no Tabi Volume 1</div>
+              <p class="book-author">- Keiichi Sigsawa</p>
+            </div>
+            <p class="book-description">
+              "Kino, a girl with an anthropomorphic motorcycle named Hermes,
+              travels from country to country, staying only three days in each,
+              absorbing the great good and horrible ugliness of each part of the
+              world."
+            </p>
+            <div class="card-footer">
+              <p class="book-pages">208 pages</p>
+              <button class="green-button">READ</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="book-title">Kino no Tabi Volume 1</div>
+              <p class="book-author">- Keiichi Sigsawa</p>
+            </div>
+            <p class="book-description">
+              "Kino, a girl with an anthropomorphic motorcycle named Hermes,
+              travels from country to country, staying only three days in each,
+              absorbing the great good and horrible ugliness of each part of the
+              world."
+            </p>
+            <div class="card-footer">
+              <p class="book-pages">208 pages</p>
+              <button class="green-button">READ</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="book-title">Kino no Tabi Volume 1</div>
+              <p class="book-author">- Keiichi Sigsawa</p>
+            </div>
+            <p class="book-description">
+              "Kino, a girl with an anthropomorphic motorcycle named Hermes,
+              travels from country to country, staying only three days in each,
+              absorbing the great good and horrible ugliness of each part of the
+              world."
+            </p>
+            <div class="card-footer">
+              <p class="book-pages">208 pages</p>
+              <button class="red-button">READ</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="book-title">Kino no Tabi Volume 1</div>
+              <p class="book-author">- Keiichi Sigsawa</p>
+            </div>
+            <p class="book-description">
+              "Kino, a girl with an anthropomorphic motorcycle named Hermes,
+              travels from country to country, staying only three days in each,
+              absorbing the great good and horrible ugliness of each part of the
+              world."
+            </p>
+            <div class="card-footer">
+              <p class="book-pages">208 pages</p>
+              <button class="red-button">READ</button>
+            </div>
+          </div>
+        </div>
+        <!-- TODO: cards -->
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
