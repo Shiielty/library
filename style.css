@@ -161,3 +161,54 @@ p.book-description {
   color:rgba(0, 0, 0, 0.75);
 }
 
+.form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* display: none; */
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  background-color: white;
+  padding: 20px;
+  border-radius: 1rem;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 0.9rem;
+}
+
+.form-header {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color:#000000cc;
+  margin-bottom: 10px;  
+  padding-bottom: 3px;
+  border-bottom: #000000cc solid 3px;
+}
+
+.form-container label, button {
+  margin-top: 10px;
+}
+
+.form-container input {
+  padding: 3px 5px;
+}
+
+.form-container button[type="submit"], .form-container button[type="button"] {
+  background-color: var(--green);
+  border: none;
+  border-radius: .5rem;
+  padding: 10px 0;
+}
+
+.form-container button[type="button"] {
+  background-color: var(--red);
+}
