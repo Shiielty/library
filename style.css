@@ -206,14 +206,18 @@ p.book-description {
 
 .submit-form, .close-form {
   background-color: var(--green);
-  border: none;
+  border: white solid 1px;
   border-radius: .5rem;
   padding: 10px 0;
+  opacity: 0.8;
 }
 
 .close-form {
   background-color: var(--red);
 }
 
-
-/* TODO: Change the button's color when :hover and :active (and :target as well I guess?) */
+.submit-form:active, .submit-form:hover, .submit-form:focus-visible,
+.close-form:active, .close-form:hover, .close-form:focus-visible {
+  opacity: 1;
+  border: black solid 1px;
+}
