@@ -204,14 +204,14 @@ p.book-description {
   resize: none;
 }
 
-.form-container button[type="submit"], .form-container button[type="button"] {
+.submit-form, .close-form {
   background-color: var(--green);
   border: none;
   border-radius: .5rem;
   padding: 10px 0;
 }
 
-.form-container button[type="button"] {
+.close-form {
   background-color: var(--red);
 }
 
