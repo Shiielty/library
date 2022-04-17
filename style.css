@@ -1,4 +1,3 @@
-/* https://tailwindcss.com/docs/customizing-colors */
 :root {
   --pink: #F8DFDF;
   --lpink: #FFF2F2;
@@ -201,6 +200,10 @@ p.book-description {
   padding: 3px 5px;
 }
 
+.form-container textarea {
+  resize: none;
+}
+
 .form-container button[type="submit"], .form-container button[type="button"] {
   background-color: var(--green);
   border: none;
@@ -211,3 +214,6 @@ p.book-description {
 .form-container button[type="button"] {
   background-color: var(--red);
 }
+
+
+/* TODO: Change the button's color when :hover and :active (and :target as well I guess?) */
