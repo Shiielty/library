@@ -12,7 +12,7 @@ const exampleBook2 = {
   pages: 208,
   description:
     "Kino, a girl with an anthropomorphic motorcycle named Hermes,travels from country to country, staying only three days in each, absorbing the great good and horrible ugliness of each part of the world.",
-  read: "read",
+  read: "not-read",
 };
 
 let myLibrary = [exampleBook1, exampleBook2];
@@ -60,10 +60,70 @@ function displayBook() {
   const mainWrapper = document.querySelector(".main-wrapper");
 
   myLibrary.forEach((book) => {
-    const cardWrapper = document.createElement("div");
-    cardWrapper.classList.add("card-wrapper");
-    cardWrapper.dataset.index = myLibrary.indexOf(book);
-    mainWrapper.appendChild(cardWrapper);
+    const createCardWrapper = document.createElement("div");
+    createCardWrapper.classList.add("card-wrapper");
+    createCardWrapper.dataset.index = myLibrary.indexOf(book);
+    mainWrapper.appendChild(createCardWrapper);
+
+    const cardWrapper = document.querySelector(
+      `.card-wrapper[data-index="${myLibrary.indexOf(book)}"]`
+    );
+
+    const createCardHeader = document.createElement("div");
+    createCardHeader.classList.add("card-header");
+    createCardHeader.dataset.index = myLibrary.indexOf(book);
+    cardWrapper.appendChild(createCardHeader);
+
+    const cardHeader = document.querySelector(
+      `.card-header[data-index="${myLibrary.indexOf(book)}"]`
+    );
+
+    const createCardTitle = document.createElement("div");
+    createCardTitle.classList.add("book-title");
+    createCardTitle.dataset.index = myLibrary.indexOf(book);
+    createCardTitle.textContent = book.title;
+    cardHeader.appendChild(createCardTitle);
+
+    const createCardAuthor = document.createElement("p");
+    createCardAuthor.classList.add("book-author");
+    createCardAuthor.dataset.index = myLibrary.indexOf(book);
+    createCardAuthor.textContent = book.author;
+    cardHeader.appendChild(createCardAuthor);
+
+    const createCardDesc = document.createElement("p");
+    createCardDesc.classList.add("book-description");
+    createCardDesc.dataset.index = myLibrary.indexOf(book);
+    if (book.description === "") {
+      createCardDesc.textContent = book.description;
+    } else {
+      createCardDesc.textContent = `"${book.description}"`;
+    }
+    cardWrapper.appendChild(createCardDesc);
+
+    const createCardFooter = document.createElement("div");
+    createCardFooter.classList.add("card-footer");
+    createCardFooter.dataset.index = myLibrary.indexOf(book);
+    cardWrapper.appendChild(createCardFooter);
+
+    const cardFooter = document.querySelector(
+      `.card-footer[data-index="${myLibrary.indexOf(book)}"]`
+    );
+
+    const createCardPages = document.createElement("p");
+    createCardPages.classList.add("book-pages");
+    createCardPages.dataset.index = myLibrary.indexOf(book);
+    createCardPages.textContent = `${book.pages} pages`;
+    cardFooter.appendChild(createCardPages);
+
+    const createCardBtn = document.createElement("button");
+    if (book.read === "read") {
+      createCardBtn.classList.add("green-button");
+    } else {
+      createCardBtn.classList.add("red-button");
+    }
+    createCardBtn.dataset.index = myLibrary.indexOf(book);
+    createCardBtn.textContent = "Read";
+    cardFooter.appendChild(createCardBtn);
   });
 }
 
