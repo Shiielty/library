@@ -163,13 +163,33 @@ p.book-description {
   opacity: 0.8;
 }
 
+.black-button {
+  background-color: black;
+  border: var(--blue) solid 1px;
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  font-family: 'Noto Serif', serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: .1rem;
+  color:#ffffff;
+  opacity: 0.8;
+}
+
 .red-button:active, .red-button:hover, .red-button:focus-visible,
-.green-button:active, .green-button:hover, .green-button:focus-visible {
+.green-button:active, .green-button:hover, .green-button:focus-visible,
+.black-button:active, .black-button:hover, .black-button:focus-visible {
   opacity: 1;
 }
 
 .red-button:active, .green-button:active {
   border: black solid 1px;  
+}
+
+.black-button:active {
+  border: white solid 1px;
+  color: red;
 }
 
 .form {

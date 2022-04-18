@@ -114,7 +114,7 @@ function displayBook() {
     cardFooter.appendChild(createCardRead);
 
     const createCardDelete = document.createElement("button");
-    createCardDelete.classList.add("delete-btn");
+    createCardDelete.classList.add("delete-btn", "black-button");
     createCardDelete.dataset.index = myLibrary.indexOf(book);
     createCardDelete.textContent = "delete";
     cardFooter.appendChild(createCardDelete);
