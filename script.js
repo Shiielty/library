@@ -78,6 +78,12 @@ function displayBook() {
     createCardAuthor.textContent = book.author;
     cardHeader.appendChild(createCardAuthor);
 
+    const createCardPages = document.createElement("p");
+    createCardPages.classList.add("book-pages");
+    createCardPages.dataset.index = myLibrary.indexOf(book);
+    createCardPages.textContent = `${book.pages} pages`;
+    cardHeader.appendChild(createCardPages);
+
     const createCardDesc = document.createElement("p");
     createCardDesc.classList.add("book-description");
     createCardDesc.dataset.index = myLibrary.indexOf(book);
@@ -96,12 +102,6 @@ function displayBook() {
     const cardFooter = document.querySelector(
       `.card-footer[data-index="${myLibrary.indexOf(book)}"]`
     );
-
-    const createCardPages = document.createElement("p");
-    createCardPages.classList.add("book-pages");
-    createCardPages.dataset.index = myLibrary.indexOf(book);
-    createCardPages.textContent = `${book.pages} pages`;
-    cardFooter.appendChild(createCardPages);
 
     const createCardBtn = document.createElement("button");
     if (book.read === "read") {

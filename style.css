@@ -92,12 +92,13 @@ font-family: 'Playfair Display', serif; */
 }
 
 .book-title {
-  padding: 0;
-  margin: 0 0 5px 0;
+  padding: 0 0 3px 0;
+  margin: 0 0 10px 0;
   color: white;
   font-family: 'Noto Serif', serif;
   font-size: 1.1rem;
   font-weight: 600;
+  border-bottom: rgba(0, 0, 0, 0.8) solid 5px;
 }
 
 .card-wrapper p {
@@ -108,7 +109,13 @@ font-family: 'Playfair Display', serif; */
 p.book-author {
   font-family: 'Noto Serif', serif;
   font-size: 0.9rem;
-  margin-bottom: 30px;
+}
+
+p.book-pages {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 0.8rem;
+  color:rgba(0, 0, 0, 0.75);
+  margin: 10px 0;
 }
 
 p.book-description {
@@ -126,12 +133,6 @@ p.book-description {
   align-items: center;
   justify-content: space-between;
   align-self: end;
-}
-
-.card-footer > p {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 0.8rem;
-  color:rgba(0, 0, 0, 0.75);
 }
 
 .red-button {
