@@ -136,7 +136,7 @@ p.book-description {
 
 .red-button {
   background-color: var(--red);
-  border: none;
+  border: var(--blue) solid 1px;
   border-radius: 1rem;
   padding: 0.5rem 2rem;
   cursor: pointer;
@@ -145,11 +145,12 @@ p.book-description {
   font-weight: 300;
   letter-spacing: .1rem;
   color:rgba(0, 0, 0, 0.75);
+  opacity: 0.8;
 }
 
 .green-button {
   background-color: var(--green);
-  border: none;
+  border: var(--blue) solid 1px;
   border-radius: 1rem;
   padding: 0.5rem 2rem;
   cursor: pointer;
@@ -158,6 +159,16 @@ p.book-description {
   font-weight: 300;
   letter-spacing: .1rem;
   color:rgba(0, 0, 0, 0.75);
+  opacity: 0.8;
+}
+
+.red-button:active, .red-button:hover, .red-button:focus-visible,
+.green-button:active, .green-button:hover, .green-button:focus-visible {
+  opacity: 1;
+}
+
+.red-button:active, .green-button:active {
+  border: black solid 1px;  
 }
 
 .form {
@@ -170,6 +181,7 @@ p.book-description {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 9;
 }
 
 .form-container {
@@ -181,6 +193,7 @@ p.book-description {
   border-radius: 1rem;
   font-family: 'Noto Sans', sans-serif;
   font-size: 0.9rem;
+  z-index: 9;
 }
 
 .form-header {
@@ -219,5 +232,8 @@ p.book-description {
 .submit-form:active, .submit-form:hover, .submit-form:focus-visible,
 .close-form:active, .close-form:hover, .close-form:focus-visible {
   opacity: 1;
-  border: black solid 1px;
+}
+
+.submit-form:active, .close-form:active {
+  border: black solid 1px;  
 }
