@@ -103,15 +103,21 @@ function displayBook() {
       `.card-footer[data-index="${myLibrary.indexOf(book)}"]`
     );
 
-    const createCardBtn = document.createElement("button");
+    const createCardRead = document.createElement("button");
     if (book.read === "read") {
-      createCardBtn.classList.add("green-button", "card-btn");
+      createCardRead.classList.add("green-button", "read-btn");
     } else {
-      createCardBtn.classList.add("red-button", "card-btn");
+      createCardRead.classList.add("red-button", "read-btn");
     }
-    createCardBtn.dataset.index = myLibrary.indexOf(book);
-    createCardBtn.textContent = "Read";
-    cardFooter.appendChild(createCardBtn);
+    createCardRead.dataset.index = myLibrary.indexOf(book);
+    createCardRead.textContent = "Read";
+    cardFooter.appendChild(createCardRead);
+
+    const createCardDelete = document.createElement("button");
+    createCardDelete.classList.add("delete-btn");
+    createCardDelete.dataset.index = myLibrary.indexOf(book);
+    createCardDelete.textContent = "delete";
+    cardFooter.appendChild(createCardDelete);
   });
 }
 
@@ -127,22 +133,44 @@ function clearForm() {
 }
 
 function toggleRead() {
-  const cardBtn = document.querySelectorAll(".card-btn");
-  cardBtn.forEach((button) => {
+  const readBtn = document.querySelectorAll(".read-btn");
+  readBtn.forEach((button) => {
     button.addEventListener("click", () => {
       if (button.className.includes("red-button")) {
-        const btnIndex = button.dataset.index;
-        myLibrary[btnIndex].read = "read";
+        const cardIndex = button.dataset.index;
+        myLibrary[cardIndex].read = "read";
 
         button.classList.remove("red-button");
         button.classList.add("green-button");
       } else {
-        const btnIndex = button.dataset.index;
-        myLibrary[btnIndex].read = "not-read";
+        const cardIndex = button.dataset.index;
+        myLibrary[cardIndex].read = "not-read";
 
         button.classList.remove("green-button");
         button.classList.add("red-button");
       }
+    });
+  });
+}
+
+function deleteCard() {
+  const deleteBtn = document.querySelectorAll(".delete-btn");
+  deleteBtn.forEach((button) => {
+    button.addEventListener("click", () => {
+      const cardIndex = button.dataset.index;
+      console.table(myLibrary);
+      myLibrary.splice(cardIndex, 1);
+      console.table(myLibrary);
+      if (document.querySelector(".main-wrapper") !== null) {
+        const element = document.querySelector(".main-wrapper");
+        element.remove();
+        displayBook();
+      } else {
+        displayBook();
+      }
+
+      toggleRead();
+      deleteCard();
     });
   });
 }
@@ -169,6 +197,7 @@ const exampleBook2 = {
 let myLibrary = [exampleBook1, exampleBook2];
 displayBook();
 toggleRead();
+deleteCard();
 
 // open and close the popout form
 const openForm = document.querySelector(".open-form");
@@ -181,10 +210,10 @@ closeForm.addEventListener("click", () => {
   form.style.display = "none";
 });
 
+// Add new book when user submit form
 const addBookBtn = document.querySelector(".submit-form");
 addBookBtn.addEventListener("click", () => {
   addBookToLibrary();
   toggleRead();
+  deleteCard();
 });
-
-// TODO: Toggle the 'Reading status'
