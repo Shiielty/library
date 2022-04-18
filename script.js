@@ -16,6 +16,7 @@ const exampleBook2 = {
 };
 
 let myLibrary = [exampleBook1, exampleBook2];
+displayBook();
 
 // Book Constructor:
 function Book(title, author, pages, description, read) {
@@ -26,9 +27,8 @@ function Book(title, author, pages, description, read) {
   this.read = read;
 }
 
+// take user's input and store the new book object into the myLibrary array.
 function addBookToLibrary() {
-  // take user's input and store the new book object into the myLibrary array.
-
   const newBook = createBookObject();
 
   myLibrary.push(newBook);
@@ -140,7 +140,6 @@ function displayBook() {
     cardFooter.appendChild(createCardBtn);
   });
 }
-displayBook();
 
 function clearForm() {
   document.querySelector("input#title").value = "";
@@ -156,17 +155,14 @@ function clearForm() {
 const openForm = document.querySelector(".open-form");
 const form = document.querySelector(".form");
 const closeForm = document.querySelector(".close-form");
-
 openForm.addEventListener("click", () => {
   form.style.display = "flex";
 });
-
 closeForm.addEventListener("click", () => {
   form.style.display = "none";
 });
 
 const addBookBtn = document.querySelector(".submit-form");
-
 addBookBtn.addEventListener("click", () => {
   addBookToLibrary();
 });
