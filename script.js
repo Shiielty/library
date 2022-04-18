@@ -1,23 +1,3 @@
-const exampleBook1 = {
-  title: "The Hobbit",
-  author: "J.R.R. Tolkien",
-  pages: 295,
-  description: "",
-  read: "read",
-};
-
-const exampleBook2 = {
-  title: "Kino no Tabi Volume 1",
-  author: "Keiichi Sigsawa",
-  pages: 208,
-  description:
-    "Kino, a girl with an anthropomorphic motorcycle named Hermes,travels from country to country, staying only three days in each, absorbing the great good and horrible ugliness of each part of the world.",
-  read: "not-read",
-};
-
-let myLibrary = [exampleBook1, exampleBook2];
-displayBook();
-
 // Book Constructor:
 function Book(title, author, pages, description, read) {
   this.title = title;
@@ -30,15 +10,11 @@ function Book(title, author, pages, description, read) {
 // take user's input and store the new book object into the myLibrary array.
 function addBookToLibrary() {
   const newBook = createBookObject();
-
   myLibrary.push(newBook);
-
-  console.table(myLibrary);
 
   if (document.querySelector(".main-wrapper") !== null) {
     const element = document.querySelector(".main-wrapper");
     element.remove();
-
     displayBook();
   } else {
     displayBook();
@@ -129,11 +105,9 @@ function displayBook() {
 
     const createCardBtn = document.createElement("button");
     if (book.read === "read") {
-      createCardBtn.setAttribute("id", "card-btn");
-      createCardBtn.classList.add("green-button");
+      createCardBtn.classList.add("green-button", "card-btn");
     } else {
-      createCardBtn.setAttribute("id", "card-btn");
-      createCardBtn.classList.add("red-button");
+      createCardBtn.classList.add("red-button", "card-btn");
     }
     createCardBtn.dataset.index = myLibrary.indexOf(book);
     createCardBtn.textContent = "Read";
@@ -152,6 +126,45 @@ function clearForm() {
   form.style.display = "none";
 }
 
+function toggleRead() {
+  const cardBtn = document.querySelectorAll(".card-btn");
+  cardBtn.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.className.includes("red-button")) {
+        button.classList.remove("red-button");
+        button.classList.add("green-button");
+      } else {
+        button.classList.remove("green-button");
+        button.classList.add("red-button");
+      }
+    });
+  });
+}
+
+// ####################################
+
+const exampleBook1 = {
+  title: "The Hobbit",
+  author: "J.R.R. Tolkien",
+  pages: 295,
+  description: "",
+  read: "read",
+};
+
+const exampleBook2 = {
+  title: "Kino no Tabi Volume 1",
+  author: "Keiichi Sigsawa",
+  pages: 208,
+  description:
+    "Kino, a girl with an anthropomorphic motorcycle named Hermes,travels from country to country, staying only three days in each, absorbing the great good and horrible ugliness of each part of the world.",
+  read: "not-read",
+};
+
+let myLibrary = [exampleBook1, exampleBook2];
+displayBook();
+toggleRead();
+
+// open and close the popout form
 const openForm = document.querySelector(".open-form");
 const form = document.querySelector(".form");
 const closeForm = document.querySelector(".close-form");
@@ -165,18 +178,7 @@ closeForm.addEventListener("click", () => {
 const addBookBtn = document.querySelector(".submit-form");
 addBookBtn.addEventListener("click", () => {
   addBookToLibrary();
+  toggleRead();
 });
 
 // TODO: Toggle the 'Reading status'
-
-// const cardBtn = document.querySelector("#card-btn");
-// cardBtn.addEventListener("click", () => {
-//   console.log("Hi");
-//   if (cardBtn.className === "red-button") {
-//     cardBtn.classList.remove("red-button");
-//     cardBtn.classList.add("green-button");
-//   } else {
-//     cardBtn.classList.remove("green-button");
-//     cardBtn.classList.add("red-button");
-//   }
-// });
