@@ -81,7 +81,7 @@ font-family: 'Playfair Display', serif; */
 .main-wrapper {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
 }
 
 .card-wrapper {
@@ -139,7 +139,7 @@ p.book-description {
   background-color: var(--red);
   border: var(--blue) solid 1px;
   border-radius: 1rem;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   font-family: 'Noto Serif', serif;
   font-size: 0.8rem;
@@ -153,7 +153,7 @@ p.book-description {
   background-color: var(--green);
   border: var(--blue) solid 1px;
   border-radius: 1rem;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   font-family: 'Noto Serif', serif;
   font-size: 0.8rem;
@@ -193,8 +193,7 @@ p.book-description {
 }
 
 .form {
-  position: fixed;
-  bottom: 0;
+  position: absolute;
   width: 100%;
   min-height: 100%;
   background-color: hsla(0, 0%, 0%, 0.4);
@@ -208,7 +207,6 @@ p.book-description {
 .form-container {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   background-color: white;
   padding: 20px;
   border-radius: 1rem;

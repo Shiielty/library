@@ -106,11 +106,12 @@ function displayBook() {
     const createCardRead = document.createElement("button");
     if (book.read === "read") {
       createCardRead.classList.add("green-button", "read-btn");
+      createCardRead.textContent = "Mark as unread";
     } else {
       createCardRead.classList.add("red-button", "read-btn");
+      createCardRead.textContent = "Mark as read";
     }
     createCardRead.dataset.index = myLibrary.indexOf(book);
-    createCardRead.textContent = "Read";
     cardFooter.appendChild(createCardRead);
 
     const createCardDelete = document.createElement("button");
@@ -142,12 +143,14 @@ function toggleRead() {
 
         button.classList.remove("red-button");
         button.classList.add("green-button");
+        button.textContent = "Mark as unread";
       } else {
         const cardIndex = button.dataset.index;
         myLibrary[cardIndex].read = "not-read";
 
         button.classList.remove("green-button");
         button.classList.add("red-button");
+        button.textContent = "Mark as read";
       }
     });
   });
