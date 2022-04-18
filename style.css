@@ -84,7 +84,7 @@ font-family: 'Playfair Display', serif; */
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-.card-wra {
+.card-wrapper {
   background-color: var(--blue);
   height: 300px;
   padding: 30px;
