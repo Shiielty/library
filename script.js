@@ -1,4 +1,4 @@
-exampleBook1 = {
+const exampleBook1 = {
   title: "The Hobbit",
   author: "J.R.R. Tolkien",
   pages: 295,
@@ -6,7 +6,7 @@ exampleBook1 = {
   read: "read",
 };
 
-exampleBook2 = {
+const exampleBook2 = {
   title: "Kino no Tabi Volume 1",
   author: "Keiichi Sigsawa",
   pages: 208,
@@ -28,32 +28,46 @@ function Book(title, author, pages, description, read) {
 
 function addBookToLibrary() {
   // take user's input and store the new book object into the myLibrary array.
-  // const titleValue = document.querySelector("input#title").value;
-  // const authorValue = document.querySelector("input#author").value;
-  // const descValue = document.querySelector("textarea#description").value;
-  // const pagesValue = document.querySelector("input#pages").value;
-  // const readValue = document.querySelector("select#read-status").value;
-  // const newBook = new Book(
-  //   titleValue,
-  //   authorValue,
-  //   pagesValue,
-  //   descValue,
-  //   readValue
-  // );
-  // myLibrary.push(newBook);
-  // console.table(myLibrary);
+
+  const newBook = createBookObject();
+
+  myLibrary.push(newBook);
+
+  console.table(myLibrary);
 
   displayBook();
 }
 
+function createBookObject() {
+  const titleValue = document.querySelector("input#title").value;
+  const authorValue = document.querySelector("input#author").value;
+  const descValue = document.querySelector("textarea#description").value;
+  const pagesValue = document.querySelector("input#pages").value;
+  const readValue = document.querySelector("select#read-status").value;
+
+  const newBook = new Book(
+    titleValue,
+    authorValue,
+    pagesValue,
+    descValue,
+    readValue
+  );
+
+  return newBook;
+}
+
 function displayBook() {
+  const mainWrapper = document.querySelector(".main-wrapper");
+
   myLibrary.forEach((book) => {
-    console.log(book);
+    const cardWrapper = document.createElement("div");
+    cardWrapper.classList.add("card-wrapper");
+    cardWrapper.dataset.index = myLibrary.indexOf(book);
+    mainWrapper.appendChild(cardWrapper);
   });
 }
 
-// TODO: Write a function that loops through the array
-// and display each book on the page (card).
+displayBook();
 
 const openForm = document.querySelector(".open-form");
 const form = document.querySelector(".form");
