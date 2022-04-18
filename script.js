@@ -1,21 +1,21 @@
-// const exampleBook1 = {
-//   title: "The Hobbit",
-//   author: "J.R.R. Tolkien",
-//   pages: 295,
-//   description: "",
-//   read: "read",
-// };
+const exampleBook1 = {
+  title: "The Hobbit",
+  author: "J.R.R. Tolkien",
+  pages: 295,
+  description: "",
+  read: "read",
+};
 
-// const exampleBook2 = {
-//   title: "Kino no Tabi Volume 1",
-//   author: "Keiichi Sigsawa",
-//   pages: 208,
-//   description:
-//     "Kino, a girl with an anthropomorphic motorcycle named Hermes,travels from country to country, staying only three days in each, absorbing the great good and horrible ugliness of each part of the world.",
-//   read: "not-read",
-// };
+const exampleBook2 = {
+  title: "Kino no Tabi Volume 1",
+  author: "Keiichi Sigsawa",
+  pages: 208,
+  description:
+    "Kino, a girl with an anthropomorphic motorcycle named Hermes,travels from country to country, staying only three days in each, absorbing the great good and horrible ugliness of each part of the world.",
+  read: "not-read",
+};
 
-let myLibrary = [];
+let myLibrary = [exampleBook1, exampleBook2];
 
 // Book Constructor:
 function Book(title, author, pages, description, read) {
@@ -43,6 +43,8 @@ function addBookToLibrary() {
   } else {
     displayBook();
   }
+
+  clearForm();
 }
 
 function createBookObject() {
@@ -127,8 +129,10 @@ function displayBook() {
 
     const createCardBtn = document.createElement("button");
     if (book.read === "read") {
+      createCardBtn.setAttribute("id", "card-btn");
       createCardBtn.classList.add("green-button");
     } else {
+      createCardBtn.setAttribute("id", "card-btn");
       createCardBtn.classList.add("red-button");
     }
     createCardBtn.dataset.index = myLibrary.indexOf(book);
@@ -137,6 +141,17 @@ function displayBook() {
   });
 }
 displayBook();
+
+function clearForm() {
+  document.querySelector("input#title").value = "";
+  document.querySelector("input#author").value = "";
+  document.querySelector("textarea#description").value = "";
+  document.querySelector("input#pages").value = "";
+  document.querySelector("select#read-status").value = "";
+
+  const form = document.querySelector(".form");
+  form.style.display = "none";
+}
 
 const openForm = document.querySelector(".open-form");
 const form = document.querySelector(".form");
@@ -155,3 +170,17 @@ const addBookBtn = document.querySelector(".submit-form");
 addBookBtn.addEventListener("click", () => {
   addBookToLibrary();
 });
+
+// TODO: Toggle the 'Reading status'
+
+// const cardBtn = document.querySelector("#card-btn");
+// cardBtn.addEventListener("click", () => {
+//   console.log("Hi");
+//   if (cardBtn.className === "red-button") {
+//     cardBtn.classList.remove("red-button");
+//     cardBtn.classList.add("green-button");
+//   } else {
+//     cardBtn.classList.remove("green-button");
+//     cardBtn.classList.add("red-button");
+//   }
+// });
