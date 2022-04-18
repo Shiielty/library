@@ -99,6 +99,7 @@ font-family: 'Playfair Display', serif; */
   font-size: 1.1rem;
   font-weight: 600;
   border-bottom: rgba(0, 0, 0, 0.8) solid 5px;
+  text-align: center;
 }
 
 .card-wrapper p {
@@ -109,6 +110,7 @@ font-family: 'Playfair Display', serif; */
 p.book-author {
   font-family: 'Noto Serif', serif;
   font-size: 0.9rem;
+  text-align: center;
 }
 
 p.book-pages {
@@ -116,6 +118,7 @@ p.book-pages {
   font-size: 0.8rem;
   color:rgba(0, 0, 0, 0.75);
   margin: 10px 0;
+  text-align: center;
 }
 
 p.book-description {
