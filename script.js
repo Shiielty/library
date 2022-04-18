@@ -131,9 +131,15 @@ function toggleRead() {
   cardBtn.forEach((button) => {
     button.addEventListener("click", () => {
       if (button.className.includes("red-button")) {
+        const btnIndex = button.dataset.index;
+        myLibrary[btnIndex].read = "read";
+
         button.classList.remove("red-button");
         button.classList.add("green-button");
       } else {
+        const btnIndex = button.dataset.index;
+        myLibrary[btnIndex].read = "not-read";
+
         button.classList.remove("green-button");
         button.classList.add("red-button");
       }
