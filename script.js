@@ -220,3 +220,5 @@ addBookBtn.addEventListener("click", () => {
   toggleRead();
   deleteCard();
 });
+
+// TODO: Add simple form validation
