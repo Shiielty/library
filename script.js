@@ -1,21 +1,21 @@
-const exampleBook1 = {
-  title: "The Hobbit",
-  author: "J.R.R. Tolkien",
-  pages: 295,
-  description: "",
-  read: "read",
-};
+// const exampleBook1 = {
+//   title: "The Hobbit",
+//   author: "J.R.R. Tolkien",
+//   pages: 295,
+//   description: "",
+//   read: "read",
+// };
 
-const exampleBook2 = {
-  title: "Kino no Tabi Volume 1",
-  author: "Keiichi Sigsawa",
-  pages: 208,
-  description:
-    "Kino, a girl with an anthropomorphic motorcycle named Hermes,travels from country to country, staying only three days in each, absorbing the great good and horrible ugliness of each part of the world.",
-  read: "not-read",
-};
+// const exampleBook2 = {
+//   title: "Kino no Tabi Volume 1",
+//   author: "Keiichi Sigsawa",
+//   pages: 208,
+//   description:
+//     "Kino, a girl with an anthropomorphic motorcycle named Hermes,travels from country to country, staying only three days in each, absorbing the great good and horrible ugliness of each part of the world.",
+//   read: "not-read",
+// };
 
-let myLibrary = [exampleBook1, exampleBook2];
+let myLibrary = [];
 
 // Book Constructor:
 function Book(title, author, pages, description, read) {
@@ -35,7 +35,14 @@ function addBookToLibrary() {
 
   console.table(myLibrary);
 
-  displayBook();
+  if (document.querySelector(".main-wrapper") !== null) {
+    const element = document.querySelector(".main-wrapper");
+    element.remove();
+
+    displayBook();
+  } else {
+    displayBook();
+  }
 }
 
 function createBookObject() {
@@ -57,7 +64,10 @@ function createBookObject() {
 }
 
 function displayBook() {
-  const mainWrapper = document.querySelector(".main-wrapper");
+  const mainContent = document.querySelector(".main-content");
+  const mainWrapper = document.createElement("div");
+  mainWrapper.classList.add("main-wrapper");
+  mainContent.appendChild(mainWrapper);
 
   myLibrary.forEach((book) => {
     const createCardWrapper = document.createElement("div");
@@ -126,7 +136,6 @@ function displayBook() {
     cardFooter.appendChild(createCardBtn);
   });
 }
-
 displayBook();
 
 const openForm = document.querySelector(".open-form");
