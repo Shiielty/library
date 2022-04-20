@@ -1,17 +1,17 @@
 :root {
-  --pink: #F8DFDF;
-  --lpink: #FFF2F2;
-  --blue: #9AC3EA;
-  --red: #F8AEAE;
-  --green: #9CE48A;
-  box-sizing: border-box
+  --pink: #f8dfdf;
+  --lpink: #fff2f2;
+  --blue: #9ac3ea;
+  --red: #f8aeae;
+  --green: #9ce48a;
+  box-sizing: border-box;
 }
 
 /* Import noto sans, noto serif, playfair display fonts */
 /* font-family: 'Noto Sans', sans-serif;
 font-family: 'Noto Serif', serif;
 font-family: 'Playfair Display', serif; */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:wght@600&display=swap");
 
 .wrapper {
   display: grid;
@@ -26,7 +26,7 @@ font-family: 'Playfair Display', serif; */
 }
 
 .header {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.7rem;
   font-weight: 700;
   letter-spacing: -0.04rem;
@@ -41,7 +41,7 @@ font-family: 'Playfair Display', serif; */
 
 .sidebar > p {
   margin: 20px 30px 10px 30px;
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 12px;
 }
 
@@ -71,7 +71,7 @@ font-family: 'Playfair Display', serif; */
 }
 
 .sidebar > button:active {
-  background-color:#479ae7;
+  background-color: #479ae7;
 }
 
 .main-content {
@@ -81,7 +81,7 @@ font-family: 'Playfair Display', serif; */
 .main-wrapper {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
 }
 
 .card-wrapper {
@@ -95,8 +95,8 @@ font-family: 'Playfair Display', serif; */
   padding: 0 0 3px 0;
   margin: 0 0 10px 0;
   color: white;
-  font-family: 'Noto Serif', serif;
-  font-size: 1.1rem;
+  font-family: "Noto Serif", serif;
+  font-size: 1.3rem;
   font-weight: 600;
   border-bottom: rgba(0, 0, 0, 0.8) solid 5px;
   text-align: center;
@@ -108,24 +108,24 @@ font-family: 'Playfair Display', serif; */
 }
 
 p.book-author {
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 0.9rem;
   text-align: center;
 }
 
 p.book-pages {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 0.8rem;
-  color:rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0.75);
   margin: 10px 0;
   text-align: center;
 }
 
 p.book-description {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 0.8rem;
   margin-bottom: 20px;
-  color:rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0.75);
   line-height: 1.3rem;
   overflow: auto;
 }
@@ -144,11 +144,11 @@ p.book-description {
   border-radius: 1rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 0.8rem;
   font-weight: 300;
-  letter-spacing: .1rem;
-  color:rgba(0, 0, 0, 0.75);
+  letter-spacing: 0.1rem;
+  color: rgba(0, 0, 0, 0.75);
   opacity: 0.8;
 }
 
@@ -158,11 +158,11 @@ p.book-description {
   border-radius: 1rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 0.8rem;
   font-weight: 300;
-  letter-spacing: .1rem;
-  color:rgba(0, 0, 0, 0.75);
+  letter-spacing: 0.1rem;
+  color: rgba(0, 0, 0, 0.75);
   opacity: 0.8;
 }
 
@@ -172,22 +172,29 @@ p.book-description {
   border-radius: 1rem;
   padding: 0.5rem 2rem;
   cursor: pointer;
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 0.8rem;
   font-weight: 300;
-  letter-spacing: .1rem;
-  color:#ffffff;
+  letter-spacing: 0.1rem;
+  color: #ffffff;
   opacity: 0.8;
 }
 
-.red-button:active, .red-button:hover, .red-button:focus-visible,
-.green-button:active, .green-button:hover, .green-button:focus-visible,
-.black-button:active, .black-button:hover, .black-button:focus-visible {
+.red-button:active,
+.red-button:hover,
+.red-button:focus-visible,
+.green-button:active,
+.green-button:hover,
+.green-button:focus-visible,
+.black-button:active,
+.black-button:hover,
+.black-button:focus-visible {
   opacity: 1;
 }
 
-.red-button:active, .green-button:active {
-  border: black solid 1px;  
+.red-button:active,
+.green-button:active {
+  border: black solid 1px;
 }
 
 .black-button:active {
@@ -213,7 +220,7 @@ p.book-description {
   background-color: white;
   padding: 20px;
   border-radius: 1rem;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 0.9rem;
   z-index: 9;
 }
@@ -221,13 +228,14 @@ p.book-description {
 .form-header {
   font-size: 1.3rem;
   font-weight: 600;
-  color:#000000cc;
-  margin-bottom: 10px;  
+  color: #000000cc;
+  margin-bottom: 10px;
   padding-bottom: 3px;
   border-bottom: #000000cc solid 3px;
 }
 
-.form-container label, button {
+.form-container label,
+button {
   margin-top: 10px;
 }
 
@@ -239,10 +247,11 @@ p.book-description {
   resize: none;
 }
 
-.submit-form, .close-form {
+.submit-form,
+.close-form {
   background-color: var(--green);
   border: white solid 1px;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 10px 0;
   opacity: 0.8;
 }
@@ -251,11 +260,16 @@ p.book-description {
   background-color: var(--red);
 }
 
-.submit-form:active, .submit-form:hover, .submit-form:focus-visible,
-.close-form:active, .close-form:hover, .close-form:focus-visible {
+.submit-form:active,
+.submit-form:hover,
+.submit-form:focus-visible,
+.close-form:active,
+.close-form:hover,
+.close-form:focus-visible {
   opacity: 1;
 }
 
-.submit-form:active, .close-form:active {
-  border: black solid 1px;  
+.submit-form:active,
+.close-form:active {
+  border: black solid 1px;
 }
