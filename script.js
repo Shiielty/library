@@ -1,3 +1,22 @@
+const exampleBook1 = {
+  title: "The Hobbit",
+  author: "J.R.R. Tolkien",
+  pages: 295,
+  description: "",
+  read: "read",
+};
+
+const exampleBook2 = {
+  title: "Kino no Tabi Volume 1",
+  author: "Keiichi Sigsawa",
+  pages: 208,
+  description:
+    "Kino, a girl with an anthropomorphic motorcycle named Hermes,travels from country to country, staying only three days in each, absorbing the great good and horrible ugliness of each part of the world.",
+  read: "not-read",
+};
+
+let myLibrary = [exampleBook1, exampleBook2];
+
 // Book Constructor:
 function Book(title, author, pages, description, read) {
   this.title = title;
@@ -129,6 +148,11 @@ function clearForm() {
   document.querySelector("input#pages").value = "";
   document.querySelector("select#read-status").value = "";
 
+  const reqInput = document.querySelectorAll("[required]");
+  reqInput.forEach((input) => {
+        input.classList.remove("invalid");
+    });
+
   const form = document.querySelector(".form");
   form.style.display = "none";
 }
@@ -144,6 +168,8 @@ function toggleRead() {
         button.classList.remove("red-button");
         button.classList.add("green-button");
         button.textContent = "Mark as unread";
+
+        bookStats();
       } else {
         const cardIndex = button.dataset.index;
         myLibrary[cardIndex].read = "not-read";
@@ -151,6 +177,8 @@ function toggleRead() {
         button.classList.remove("green-button");
         button.classList.add("red-button");
         button.textContent = "Mark as read";
+
+        bookStats();
       }
     });
   });
@@ -172,33 +200,36 @@ function deleteCard() {
         displayBook();
       }
 
+      bookStats();
       toggleRead();
       deleteCard();
     });
   });
 }
 
+function bookStats() {
+  const totalBook = document.querySelector(".total-book");
+  const bookRead = document.querySelector(".book-read");
+
+  let totalItem = 0;
+  let readItem = 0;
+
+  myLibrary.forEach((book) => {
+    totalItem++;
+    if (book.read === "read") {
+      readItem++;
+    }
+  })
+
+  totalBook.textContent = `Total Books: ${totalItem}`;
+  bookRead.textContent = `Book Reads: ${readItem}`;
+}
+
 // ####################################
 
-const exampleBook1 = {
-  title: "The Hobbit",
-  author: "J.R.R. Tolkien",
-  pages: 295,
-  description: "",
-  read: "read",
-};
-
-const exampleBook2 = {
-  title: "Kino no Tabi Volume 1",
-  author: "Keiichi Sigsawa",
-  pages: 208,
-  description:
-    "Kino, a girl with an anthropomorphic motorcycle named Hermes,travels from country to country, staying only three days in each, absorbing the great good and horrible ugliness of each part of the world.",
-  read: "not-read",
-};
-
-let myLibrary = [exampleBook1, exampleBook2];
+// initial function
 displayBook();
+bookStats();
 toggleRead();
 deleteCard();
 
@@ -216,9 +247,23 @@ closeForm.addEventListener("click", () => {
 // Add new book when user submit form
 const addBookBtn = document.querySelector(".submit-form");
 addBookBtn.addEventListener("click", () => {
-  addBookToLibrary();
-  toggleRead();
-  deleteCard();
+  const titleInput = document.querySelector("input#title");
+  const authorInput = document.querySelector("input#author");
+  const pagesInput = document.querySelector("input#pages");
+  const reqInput = document.querySelectorAll("[required]");
+  if (titleInput.value === "" || authorInput.value === "" || pagesInput.value === "") {
+    reqInput.forEach((input) => {
+      if (input.value === "") {
+        input.classList.add("invalid");
+      } else {
+        input.classList.remove("invalid");
+      }
+    })
+  } else {
+    addBookToLibrary();
+    bookStats();
+    toggleRead();
+    deleteCard();
+  }
+  
 });
-
-// TODO: Add simple form validation
