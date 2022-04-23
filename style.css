@@ -307,9 +307,16 @@ button {
   padding: 5px 0 10px 0;
 }
 
-.footer a {
+.footer a,
+.footer p {
   color: white;
   align-self: center;
+  letter-spacing: 0.1rem;
+  margin: 5px 0;
+}
+
+.footer a {
+  font-weight: bold;
 }
 
 .footer img {
