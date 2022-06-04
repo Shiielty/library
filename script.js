@@ -18,12 +18,14 @@ const exampleBook2 = {
 let myLibrary = [exampleBook1, exampleBook2];
 
 // Book Constructor:
-function Book(title, author, pages, description, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.description = description;
-  this.read = read;
+class Book {
+  constructor(title, author, pages, description, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.description = description;
+    this.read = read;
+  }
 }
 
 // take user's input and store the new book object into the myLibrary array.
@@ -189,9 +191,7 @@ function deleteCard() {
   deleteBtn.forEach((button) => {
     button.addEventListener("click", () => {
       const cardIndex = button.dataset.index;
-      console.table(myLibrary);
       myLibrary.splice(cardIndex, 1);
-      console.table(myLibrary);
       if (document.querySelector(".main-wrapper") !== null) {
         const element = document.querySelector(".main-wrapper");
         element.remove();
